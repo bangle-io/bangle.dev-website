@@ -32,6 +32,8 @@ const templatify = (text, context) => {
 };
 
 async function main() {
+  await del(apiDocsPath, { force: true });
+
   const { tempDir: rawDocsDir, mapping: packageMapping } =
     await cloneBangleDev();
 
@@ -50,9 +52,7 @@ async function main() {
     "!" + path.join(rawDocsDir, ".yarn/**"),
     "!" + path.join(rawDocsDir, "**/__tests__/*"),
   ]);
-  // doing a force since bangle-website will
-  // be outside of cwd.
-  await del(apiDocsPath, { force: true });
+
   await fs.mkdir(apiDocsPath);
 
   const processedFiles = await processFiles(apiFiles, docsConfig);
@@ -62,14 +62,11 @@ async function main() {
 }
 
 async function cloneBangleDev() {
-  //   const tempDir = os.tmpdir();
-  //   const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "bangle-"));
-  //   execSync("git clone git@github.com:bangle-io/bangle.dev.git --depth=1", {
-  //     stdio: [0, 1, 2], // we need this so node will print the command output
-  //     cwd: path.resolve(tempDir), // path to where you want to save the file
-  //   });
-
-  const tempDir = `/var/folders/0h/xv6wydws2vn9xzq827q_dcg80000gn/T/bangle-a70Bmr`;
+  const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "bangle-"));
+  execSync("git clone git@github.com:bangle-io/bangle.dev.git --depth=1", {
+    stdio: [0, 1, 2], // we need this so node will print the command output
+    cwd: path.resolve(tempDir), // path to where you want to save the file
+  });
 
   const bangleDir = path.join(tempDir, "bangle.dev");
 
