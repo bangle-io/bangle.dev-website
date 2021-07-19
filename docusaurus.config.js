@@ -91,13 +91,12 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.json"),
-          editUrl:
-            "https://github.com/bangle-io/bangle.dev-website/edit/main/_bangle-website/",
+          editUrl: "https://github.com/bangle-io/bangle.dev-website/edit/main/",
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            "https://github.com/bangle-io/bangle.dev-website/edit/main/_bangle-website/blog/",
+            "https://github.com/bangle-io/bangle.dev-website/edit/main/blog/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
