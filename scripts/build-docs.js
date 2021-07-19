@@ -63,7 +63,7 @@ async function main() {
 
 async function cloneBangleDev() {
   const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "bangle-"));
-  execSync("git clone git@github.com:bangle-io/bangle.dev.git --depth=1", {
+  execSync("git clone https://github.com/bangle-io/bangle.dev.git --depth=1", {
     stdio: [0, 1, 2], // we need this so node will print the command output
     cwd: path.resolve(tempDir), // path to where you want to save the file
   });
