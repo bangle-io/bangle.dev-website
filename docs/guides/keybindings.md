@@ -12,7 +12,7 @@ In the example below we look at how to customize a keybindings for the
 [bold](/docs/api/core#bold-component) component.
 
 ```js
-import { components } from '@bangle.dev/core';
+import { components } from "@bangle.dev/core";
 
 const { bold } = components;
 // If you pass nothing the `bold.defaultKeys` keybindings will be used
@@ -21,7 +21,7 @@ bold.plugins();
 // To override the toggleBold
 bold.plugins({
   keybindings: {
-    toggleBold: 'Ctrl-d',
+    toggleBold: "Ctrl-d",
   },
 });
 
@@ -36,7 +36,7 @@ bold.plugins({
 bold.plugins({
   keybindings: {
     ...bold.defaultKeys,
-    toggleBold: 'Ctrl-d',
+    toggleBold: "Ctrl-d",
   },
 });
 ```
@@ -47,13 +47,13 @@ If you want to create your own keyboard sorcery you will need to use [Prosemirro
 a `Ctrl-s` shortcut which shouts the text content whenever pressed.
 
 ```js
-import { corePlugins, coreSpec } from '@bangle.dev/core';
-import { keymap } from 'prosemirror-keymap';
+import { corePlugins, coreSpec } from "@bangle.dev/core";
+import { keymap } from "@bangle.dev/pm";
 
 const state = new BangleEditorState({
   plugins: () => [
     keymap({
-      'Ctrl-s': (state, dispatch, view) => {
+      "Ctrl-s": (state, dispatch, view) => {
         alert(state.doc.textContent);
       },
     }),

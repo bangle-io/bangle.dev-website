@@ -1,30 +1,30 @@
-import '@bangle.dev/core/style.css';
+import "@bangle.dev/core/style.css";
 import {
   NodeView,
   domSerializationHelpers,
   corePlugins,
   coreSpec,
-} from '@bangle.dev/core';
+} from "@bangle.dev/core";
 
-import { safeInsert } from '@bangle.dev/utils';
-import { BangleEditor, useEditorState } from '@bangle.dev/react';
-import { keymap } from 'prosemirror-keymap';
-import React, { useEffect, useState } from 'react';
+import { safeInsert } from "@bangle.dev/utils";
+import { BangleEditor, useEditorState } from "@bangle.dev/react";
+import { keymap } from "@bangle.dev/pm";
+import React, { useEffect, useState } from "react";
 
 const speech = {
   spec() {
-    const name = 'speech';
+    const name = "speech";
     const { toDOM, parseDOM } = domSerializationHelpers(name, {
-      tag: 'div',
+      tag: "div",
       content: 0,
     });
 
     return {
-      type: 'node',
-      name: 'speech',
+      type: "node",
+      name: "speech",
       schema: {
-        content: 'inline*',
-        group: 'block',
+        content: "inline*",
+        group: "block",
         draggable: false,
         toDOM,
         parseDOM,
@@ -34,12 +34,12 @@ const speech = {
   plugins() {
     return [
       keymap({
-        'Ctrl-d': createSpeechNode(),
+        "Ctrl-d": createSpeechNode(),
       }),
       NodeView.createPlugin({
-        name: 'speech',
-        containerDOM: ['div', { class: 'speech-container' }],
-        contentDOM: ['span', { class: 'speech-text' }],
+        name: "speech",
+        containerDOM: ["div", { class: "speech-container" }],
+        contentDOM: ["span", { class: "speech-text" }],
       }),
     ];
   },
@@ -50,32 +50,32 @@ export default function Example() {
     specs: [...coreSpec(), speech.spec()],
     plugins: () => [...corePlugins(), speech.plugins()],
     initialValue: {
-      type: 'doc',
+      type: "doc",
       content: [
         {
-          type: 'paragraph',
+          type: "paragraph",
           content: [
             {
-              type: 'text',
-              text: 'Let us play some sound 🎶',
+              type: "text",
+              text: "Let us play some sound 🎶",
             },
           ],
         },
         {
-          type: 'speech',
+          type: "speech",
           content: [
             {
-              type: 'text',
-              text: 'I am a robot',
+              type: "text",
+              text: "I am a robot",
             },
           ],
         },
         {
-          type: 'paragraph',
+          type: "paragraph",
           content: [
             {
-              type: 'text',
-              text: 'Press Ctrl-d to create more nodes',
+              type: "text",
+              text: "Press Ctrl-d to create more nodes",
             },
           ],
         },
@@ -87,7 +87,7 @@ export default function Example() {
     <BangleEditor
       state={editorState}
       renderNodeViews={({ node, updateAttrs, children }) => {
-        if (node.type.name === 'speech') {
+        if (node.type.name === "speech") {
           return (
             <Speech node={node} updateAttrs={updateAttrs}>
               {children}
@@ -99,7 +99,7 @@ export default function Example() {
   );
 }
 
-export function createSpeechNode(text = 'Hello !') {
+export function createSpeechNode(text = "Hello !") {
   return (state, dispatch) => {
     const type = state.schema.nodes.speech;
     const node = type.createChecked(undefined, state.schema.text(text));
@@ -112,7 +112,7 @@ export function createSpeechNode(text = 'Hello !') {
 }
 
 function Speech({ node, children }) {
-  const [lang, setLang] = useState('');
+  const [lang, setLang] = useState("");
   const [voices, setVoices] = useState(speechSynthesis.getVoices());
 
   const onPlay = () => {
@@ -124,7 +124,7 @@ function Speech({ node, children }) {
 
   useEffect(() => {
     if (speechSynthesis.addEventListener) {
-      speechSynthesis.addEventListener('voiceschanged', () => {
+      speechSynthesis.addEventListener("voiceschanged", () => {
         setVoices(speechSynthesis.getVoices());
       });
     }
@@ -133,16 +133,16 @@ function Speech({ node, children }) {
   return (
     <div
       style={{
-        backgroundColor: 'lightsteelblue',
+        backgroundColor: "lightsteelblue",
         borderRadius: 4,
-        margin: '0.5rem 1rem',
-        padding: '0.5rem 1rem',
+        margin: "0.5rem 1rem",
+        padding: "0.5rem 1rem",
       }}
     >
       <div
         className="your-land"
         contentEditable={false}
-        style={{ userSelect: 'none' }}
+        style={{ userSelect: "none" }}
       >
         <select
           value={lang}

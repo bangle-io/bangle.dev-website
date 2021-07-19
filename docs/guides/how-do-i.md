@@ -15,7 +15,7 @@ Create a plugin which listens to DOM events as show below:
 
 ```js
 new Plugin({
-  key: new PluginKey('myDropPlugin'),
+  key: new PluginKey("myDropPlugin"),
   props: {
     handleDOMEvents: {
       drop(view, event) {
@@ -66,19 +66,25 @@ const schema = specRegistry.schema;
 
 ### How do I access `prosemirror-*` module ?
 
-You can either npm install them:
+You can use the `@bangle.dev/pm` package, which exports all of the core exports of `prosemirror-*` package in a single streamlined fashion.
+
+```js
+import { EditorView, TextSelection, Slice } from "@bangle.dev/pm";
+```
+
+Else, you can install the prosemirror packages:
 
 ```
 npm i -S prosemirror-view prosemirror-state
 ```
 
 ```js
-import { EditorView } from 'prosemirror-view';
-import { TextSelection } from 'prosemirror-state';
-import { Slice } from 'prosemirror-model';
+import { EditorView } from "prosemirror-view";
+import { TextSelection } from "prosemirror-state";
+import { Slice } from "prosemirror-model";
 ```
 
-I recommend the later approach to avoid problems with different versions of Prosemirror existing in your application.
+I recommend the first approach, as in the second approach you are responsible for making sure bangle and your prosemirror package versions align.
 
 ### How do I change the selection ?
 
@@ -88,7 +94,7 @@ First, you will need to figure out whether you want a [TextSelection](https://pr
 const setSelectionAtEnd = (state, dispatch) => {
   const textSelection = TextSelection.create(
     state.doc,
-    state.doc.content.size - 1,
+    state.doc.content.size - 1
   );
   // doing this creates a new Transaction
   const tr = state.tr;
@@ -118,7 +124,7 @@ Below is an example of how you can create a new paragraph node:
 const { doc, schema, tr } = view.state;
 const type = schema.nodes.paragraph;
 // Insert a paragraph node at the end of document.
-const transaction = tr.insert(doc.content.size, type.create('Hello'));
+const transaction = tr.insert(doc.content.size, type.create("Hello"));
 // Commit it.
 view.dispatch(transaction);
 ```
