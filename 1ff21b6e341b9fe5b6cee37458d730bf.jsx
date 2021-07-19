@@ -5,10 +5,9 @@ import {
   coreSpec,
   SpecRegistry,
   heading,
-} from '@bangle.dev/core';
-import '@bangle.dev/core/style.css';
-import { Plugin, Selection } from 'prosemirror-state';
-import { Decoration, DecorationSet } from 'prosemirror-view';
+} from "@bangle.dev/core";
+import "@bangle.dev/core/style.css";
+import { Plugin, Selection, Decoration, DecorationSet } from "@bangle.dev/pm";
 
 export default function Editor(domNode) {
   const state = new BangleEditorState({
@@ -65,7 +64,7 @@ const collapsePlugin = new Plugin({
 
 function buildDeco(state) {
   const collapsedHeadingSet = new Set(
-    heading.listCollapsedHeading(state).map((r) => r.node),
+    heading.listCollapsedHeading(state).map((r) => r.node)
   );
 
   const headings = heading
@@ -83,12 +82,12 @@ function buildDeco(state) {
           createCollapseDOM(
             view,
             collapsedHeadingSet.has(match.node),
-            match.pos,
+            match.pos
           ),
         // render deco before cursor
-        { side: -1 },
-      ),
-    ),
+        { side: -1 }
+      )
+    )
   );
 }
 
@@ -96,15 +95,15 @@ function buildDeco(state) {
 // - will be placed at the right position by Prosemirror
 // - will respond to click event and trigger the toggleHeadingCollapse command
 function createCollapseDOM(view, isCollapsed, pos) {
-  const child = document.createElement('span');
-  child.addEventListener('click', function (e) {
+  const child = document.createElement("span");
+  child.addEventListener("click", function (e) {
     const tr = view.state.tr;
     view.dispatch(tr.setSelection(Selection.near(tr.doc.resolve(pos))));
     heading.toggleHeadingCollapse()(view.state, view.dispatch, view);
   });
 
-  child.style.userSelect = 'none';
-  child.style.cursor = 'pointer';
-  child.innerText = isCollapsed ? '▶️' : '▼';
+  child.style.userSelect = "none";
+  child.style.cursor = "pointer";
+  child.innerText = isCollapsed ? "▶️" : "▼";
   return child;
 }
