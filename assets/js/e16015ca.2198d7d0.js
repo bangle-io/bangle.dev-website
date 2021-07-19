@@ -1,0 +1,1 @@
+(self.webpackChunkbangle_dev_website=self.webpackChunkbangle_dev_website||[]).push([[9700],{947:function(e){"use strict";e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"hola","name":"hola","count":1,"permalink":"/blog/tags/hola"}')}}]);

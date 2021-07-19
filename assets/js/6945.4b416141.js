@@ -1,0 +1,1 @@
+(self.webpackChunkbangle_dev_website=self.webpackChunkbangle_dev_website||[]).push([[6945],{6945:function(e,s,b){"use strict";b.r(s)}}]);
