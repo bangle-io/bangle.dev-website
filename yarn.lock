@@ -1145,179 +1145,173 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
-"@bangle.dev/collab-client@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/collab-client/-/collab-client-0.24.0-alpha.10.tgz#ee2d027542e071b508c8db1b35411cd07c4378ff"
-  integrity sha512-WQxOUzEKxjC0h1IGX0JYz8UhWrYdhzknZj2ZUwcMKFGcPv2W2MoHER9SBamsppo/HmL8rkBFxhXmMFRZGIKHjA==
+"@bangle.dev/collab-client@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/collab-client/-/collab-client-0.25.0.tgz#30fce238fa924683bf0bd910a1cc00517b37b5dd"
+  integrity sha512-rvkgo9ZQhnWUG3OBLkPgnoZRmujI7q1psXC1qfy1GB7u3pDoXUOBdVex7z9ZLNetLosSZc7UtKB4qZ28P4beZQ==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
-    "@bangle.dev/utils" "0.24.0-alpha.10"
+    "@bangle.dev/utils" "0.25.0"
     prosemirror-collab "^1.2.2"
 
-"@bangle.dev/collab-server@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/collab-server/-/collab-server-0.24.0-alpha.10.tgz#631ead0412433301f6a34a7c002c24bc2b783102"
-  integrity sha512-rTXrSjrdNn4G4kyMhQffisDFrKy9c7/2gySreHfWs3C97ag+Kkft1C57RYE6NOTQXMafN09Ml3JjKQ/hZgMiMA==
+"@bangle.dev/collab-server@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/collab-server/-/collab-server-0.25.0.tgz#9a4ccebae65de740485a96540a75e0a51924a053"
+  integrity sha512-rO76yJUl1ZH3lafCd8tgsjk9NOxspSfCYc0mPMSIA258b3TAYQL6M2lyKdVCQ9eeDzE5BA2mL68QZ/Hn8jve1w==
   dependencies:
-    "@bangle.dev/disk" "0.24.0-alpha.10"
-    "@bangle.dev/pm" "0.6.0"
+    "@bangle.dev/disk" "0.25.0"
+    "@bangle.dev/utils" "0.25.0"
     prosemirror-collab "^1.2.2"
 
-"@bangle.dev/core@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/core/-/core-0.24.0-alpha.10.tgz#9b3d82a0c30a2f4d5cb5141072a2f1aa8c32cfab"
-  integrity sha512-ln3LtWKRl3zD2adCdu5fScG/r/QPYry5lSUFYMuQ1JpdYoXUIdDvtaDf6sMwBVSh6u8slBDWEP/sI50J0opQjA==
+"@bangle.dev/core@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/core/-/core-0.25.0.tgz#4c63fb89857fe52c360c81b1dd49d88f1733c299"
+  integrity sha512-h5FTEiBVCZJbN+Tcf1hYXINA3jlRMSijCd2obL+GY9LXpzAF2EJrqXn2dH/y1KSodi/b1sGqSGXehg8VTanPNw==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
-    "@bangle.dev/utils" "0.24.0-alpha.10"
+    "@bangle.dev/utils" "0.25.0"
 
-"@bangle.dev/disk@0.24.0-alpha.10", "@bangle.dev/disk@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/disk/-/disk-0.24.0-alpha.10.tgz#bdafd7d1060fcd89608f38bb2745a456e1c17c34"
-  integrity sha512-bnYEIiknYHC9YX49eldOHhHP0QnkD7TwVzXs/5c960ZzT4yvNe33MV4Bh1+117iO6D64DXeO4FCV/X4jW8KgJA==
+"@bangle.dev/disk@0.25.0", "@bangle.dev/disk@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/disk/-/disk-0.25.0.tgz#d2fd40f7f44513f7d5e887de0e7f22ec6c7ba6cd"
+  integrity sha512-UlA5NFapjq+X47htxD2tLDJdd88CBdrUF3KfNN3BDm2sfitQqUevjTfVOjg5kHMIc6xNE8V9VgCmH5GngzoivQ==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
     debounce-fn "^5.0.0"
 
-"@bangle.dev/emoji@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/emoji/-/emoji-0.24.0-alpha.10.tgz#f4f228b09f47d1d9f57a9f1f13ca7b73e80c9ddf"
-  integrity sha512-PBQVbaIiG/9jwgw4XE/pmK1Of+fAoXDRt7vNfrvbFkxE7l66WTcjz/ioSP1T3jaemKhlFlp2hsJOope4azn6yw==
+"@bangle.dev/emoji@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/emoji/-/emoji-0.25.0.tgz#220331a5291fd6dc8c48ba35f0dc60c863811e3c"
+  integrity sha512-JYYevsehz0lqehJCifG4YzzE5ZDYT7526YQ/ZN6sh/lnCxdJ0pjKodIP3SoK/6rZof2S6dYywLmnlu8Bp3wgRg==
   dependencies:
+    "@bangle.dev/utils" "0.25.0"
     markdown-it-emoji "^2.0.0"
 
-"@bangle.dev/markdown-front-matter@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/markdown-front-matter/-/markdown-front-matter-0.24.0-alpha.10.tgz#6c94338a1236012f86949c37a3ed355567144b3c"
-  integrity sha512-yBZgQmedO5KYdMe7gqCzlueaIlpyVhCpB63gjoCNp0jOI321+zjOzFz5JDBbAvfScDKNN13a8B9Nt5bsfnROZQ==
-
-"@bangle.dev/markdown@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/markdown/-/markdown-0.24.0-alpha.10.tgz#e16a1cc3dbf85f517b22d6bf8b912ce4b9c3e605"
-  integrity sha512-+Wj/YfcVVEWHl/gz0gqUQjOKNzOS9LY0VYDXHgrtfAoem8nGA9lziMYU7iL/J7n13QewppTqMoOlXjju2r2D7w==
+"@bangle.dev/markdown-front-matter@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/markdown-front-matter/-/markdown-front-matter-0.25.0.tgz#94696162e776e365ae55b1beae5f40dea742d498"
+  integrity sha512-DjEEnzGsKa5bGzJrotfjZwrGI1JNEyRhKlmw/RDhJ4PXMCVfd5ygWFRMLer3zGkc0dmCrxNE+Nr0+3KRC6bsew==
   dependencies:
-    "@bangle.dev/utils" "0.24.0-alpha.10"
+    "@bangle.dev/utils" "0.25.0"
+
+"@bangle.dev/markdown@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/markdown/-/markdown-0.25.0.tgz#8db12d47e7e008a2f3e42391d1e1bb76387ced80"
+  integrity sha512-3RpoWO5o0om/KGPQmfE3noF5GEFmM433T9CyjdP4MbURQoBll0rT08bZGtI/Ih5WEOzFZY/nQh+TmKw1MY9EpA==
+  dependencies:
+    "@bangle.dev/utils" "0.25.0"
     markdown-it "^10.0.0"
     prosemirror-markdown "^1.5.1"
 
-"@bangle.dev/pm@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/pm/-/pm-0.6.0.tgz#c8d94a779de6da2ff45004da0abd1d035d677580"
-  integrity sha512-VbDPcrMo/VM1CL0z9+qk33bWhMFYOdphm3a8rvNtuGNXpvIYppkdRKPntXuDJPeBWwoxzPQw+hrIHKh8D8cpow==
+"@bangle.dev/pm@0.8.0", "@bangle.dev/pm@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/pm/-/pm-0.8.0.tgz#b222ae8065f9edc1cc4322b45dea227cb02381f4"
+  integrity sha512-LdpCMKnle8wcAu2d6PZuR1dMK3SPllZ9/e3HbErMInbX3d481CYgYTISL4UXiRpIg17PPWTEhJk5JqC3pHx5eA==
   dependencies:
-    "@types/prosemirror-commands" "^1.0.4"
-    "@types/prosemirror-dropcursor" "^1.0.2"
-    "@types/prosemirror-gapcursor" "^1.0.4"
-    "@types/prosemirror-history" "^1.0.3"
-    "@types/prosemirror-inputrules" "^1.0.4"
-    "@types/prosemirror-keymap" "^1.0.4"
-    "@types/prosemirror-model" "^1.13.1"
-    "@types/prosemirror-schema-list" "^1.0.3"
-    "@types/prosemirror-state" "^1.2.7"
-    "@types/prosemirror-transform" "^1.1.4"
-    "@types/prosemirror-view" "^1.17.2"
+    "@types/prosemirror-commands" "1.x"
+    "@types/prosemirror-dropcursor" "1.x"
+    "@types/prosemirror-gapcursor" "1.x"
+    "@types/prosemirror-history" "1.x"
+    "@types/prosemirror-inputrules" "1.x"
+    "@types/prosemirror-keymap" "1.x"
+    "@types/prosemirror-model" "1.x"
+    "@types/prosemirror-schema-list" "1.x"
+    "@types/prosemirror-state" "1.x"
+    "@types/prosemirror-transform" "1.x"
+    "@types/prosemirror-view" "1.x"
     prosemirror-commands "^1.1.10"
     prosemirror-dropcursor "^1.3.5"
     prosemirror-gapcursor "^1.1.5"
-    prosemirror-history "^1.1.3"
-    prosemirror-inputrules "^1.1.3"
+    prosemirror-history "^1.1.0"
+    prosemirror-inputrules "^1.1.0"
     prosemirror-keymap "^1.1.4"
-    prosemirror-model "^1.14.2"
+    prosemirror-model "^1.1.0"
     prosemirror-schema-list "^1.1.5"
-    prosemirror-state "^1.3.4"
+    prosemirror-state "^1.0.0"
     prosemirror-tables "^1.1.1"
-    prosemirror-transform "^1.3.2"
-    prosemirror-view "^1.18.10"
+    prosemirror-transform "^1.1.0"
+    prosemirror-view "^1.10.0"
 
-"@bangle.dev/react-emoji-suggest@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/react-emoji-suggest/-/react-emoji-suggest-0.24.0-alpha.10.tgz#91dc021f23fee019e73cd5d3fd80f01d4512cf0a"
-  integrity sha512-rmSxr9W97Ti1UZP9YofloekG055VGbLfwF/7XDMqCnWWbx+c5qd0V8ndQkzrt380e9TB+hxMfFaP66LA1gtJgA==
+"@bangle.dev/react-emoji-suggest@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/react-emoji-suggest/-/react-emoji-suggest-0.25.0.tgz#d1695927f8c4843c65ab229a7a4b593d625bf599"
+  integrity sha512-LMu0MJNCQQZcjQbFZj3e/JHNnIxC9yKGZ+8Gdk1lESVjk9/h8lWfq7QCjJL3hl4pZwhDcJeSYXt0Lmj+5qYR9g==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
-    "@bangle.dev/utils" "0.24.0-alpha.10"
+    "@bangle.dev/pm" "^0.8.0"
+    "@bangle.dev/utils" "0.25.0"
 
-"@bangle.dev/react-menu@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/react-menu/-/react-menu-0.24.0-alpha.10.tgz#360143cc5498a86e6792b28484faacb8e1dc9ade"
-  integrity sha512-Csn/upi3mN1KwtYWJWnI3XZPtIvvzLJ1MkCsQlKBZyIgwdl7pg0/01d0/EwEJIAK6b3z+Ass9KQtbLG/L1bD6w==
+"@bangle.dev/react-menu@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/react-menu/-/react-menu-0.25.0.tgz#8f73e098fbba0951776ed2e2ac584ec829aa2a98"
+  integrity sha512-jPACYmAPwnWtp12PAx6+opMV8+GATVUo0f0Ci9qZs5rncu7cynZobLkCDOKInE4sJ50hoW/DW4W6qDwsIwSSng==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
-    "@bangle.dev/utils" "0.24.0-alpha.10"
+    "@bangle.dev/utils" "0.25.0"
     prop-types "^15.7.2"
 
-"@bangle.dev/react-sticker@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/react-sticker/-/react-sticker-0.24.0-alpha.10.tgz#2fd828173f281bac58d870f5ad6c90dc468b5779"
-  integrity sha512-yaxfxm5DZRekJ+kxGw7wXVo5Y1NqV9iSOo70TwFlbLatTFPFYt+nTR7NnU3Hey3u4KM7v7PakatgU21AW/VPxg==
+"@bangle.dev/react-sticker@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/react-sticker/-/react-sticker-0.25.0.tgz#6bfc4f8e3b1cce913c0084b1802ace714faa2a4c"
+  integrity sha512-acv7HA5+DYFOZuPIV2oI2S3RTAke6Iy2HjcaOxPnLNAlWr2Y/mj+t0eB5qGPMwTbk4seelMLzu7F67cujCOrDQ==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
+    "@bangle.dev/utils" "0.25.0"
     prop-types "^15.7.2"
 
-"@bangle.dev/react-stopwatch@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/react-stopwatch/-/react-stopwatch-0.24.0-alpha.10.tgz#7638323bcf7be9e0392abf14d1a9dcaeafe11fa1"
-  integrity sha512-y5G+PnbqsgVUuUvI8YZ6lYkMYtvBVQjjE5vLWA4ZC9owNhwgsjF6Mjen5qux13QMKQc+RnHWDv1UC2bZlDVpNg==
+"@bangle.dev/react-stopwatch@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/react-stopwatch/-/react-stopwatch-0.25.0.tgz#a246bec9a412cbeba0ec7d2d6e370a82a899534a"
+  integrity sha512-Nv5on75wHhKuv+AOSW8Jj9KdQEciHLBtlWuINpMEN3STMUnhpNOXdfO8rv1qZ1mEUqJZI6EODrtP7bITYilJbA==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
-    "@bangle.dev/utils" "0.24.0-alpha.10"
+    "@bangle.dev/utils" "0.25.0"
 
-"@bangle.dev/react@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/react/-/react-0.24.0-alpha.10.tgz#838f07aa07c9d979bb6e0433d6be38b2bc71dde9"
-  integrity sha512-/eOgbUvVbfPUumUUd6xFZEnG67qVNNlodoUaLl1ackz2o9kwOMp85YJxG3wQYTHI57CPU/HTSwfQVWErK9pQqg==
+"@bangle.dev/react@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/react/-/react-0.25.0.tgz#aecf37e68f606a4c69b2014e7c109379a6d0ea9e"
+  integrity sha512-XT1pGPnVDH8jz7QsP9PHXpT07QVOz3KKuXfPrxeX58ejQWN+/5SevQCraJfOaqRAWhZ92BhCG7xbAkgYXPGhBg==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
-    "@bangle.dev/utils" "0.24.0-alpha.10"
+    "@bangle.dev/utils" "0.25.0"
     prop-types "^15.7.2"
     punycode "^2.1.1"
 
-"@bangle.dev/table@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/table/-/table-0.24.0-alpha.10.tgz#81a5fa47df38daa560c996ec8b3c0f0804ef40df"
-  integrity sha512-3S30Bee6h0rhdbyPwyC26k5kG1XG6SE4aefRkpHL5RmXp31BcTOlkBPDPMjBi3wRCnIueqafX/WZREELBOdSEQ==
+"@bangle.dev/table@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/table/-/table-0.25.0.tgz#4826ac8001b2fce1b4476e959b48a2ad8402f80c"
+  integrity sha512-zpsnGC71FyFON4wfd2IJtIiMxDeiWsDX7+sv/NcvcChjagYsjQAeV7E8DHNcf1f2v09NRJayqaN8SGTSSuI8Xg==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
+    "@bangle.dev/utils" "0.25.0"
 
-"@bangle.dev/text-formatting@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/text-formatting/-/text-formatting-0.24.0-alpha.10.tgz#021f97ebc0f5608f6600f5a52b4c523785583a9d"
-  integrity sha512-VUCw6AatDdyEkCLWyOK7knuPRSxxqEJUSEGVNBtgJ6ZJFrlPPFrGMGFeVB23Q/vTKOBiW9hNYeKId0TD8vlExQ==
+"@bangle.dev/text-formatting@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/text-formatting/-/text-formatting-0.25.0.tgz#9e0a11abe79e2c01b338b2f99fd0431b073883f8"
+  integrity sha512-y8bT037tjsXDBz4AlAWHdvXZS/2q5D1yvI/I+bSqGGBmX7QXityiKF+kXJ2l3TsIx1NvSkvEubnIA4d4h3FkFA==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
-    "@bangle.dev/utils" "0.24.0-alpha.10"
+    "@bangle.dev/utils" "0.25.0"
 
-"@bangle.dev/timestamp@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/timestamp/-/timestamp-0.24.0-alpha.10.tgz#eec3ff8f0334692c4014adba3177c2a5d58248df"
-  integrity sha512-GXxWybXLXsTLKZ3Xy5WKtnP95SPryxRLjPMdWPZAXF/85vKm0d0Y6xXIMQoys9K3TKsszbyuhopsrvhHBcrOWA==
+"@bangle.dev/timestamp@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/timestamp/-/timestamp-0.25.0.tgz#51a3ffe527d37ab30341371ee833011c2cc6a8ee"
+  integrity sha512-QzNcH7B8TAkLOCjw7N/EhyZCgvtr9+SXAF+9FYceh5INms6pxEUviFqyxmQ/lJ/0iMJWvCf/9whwusX3+ud6lQ==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
+    "@bangle.dev/utils" "0.25.0"
 
-"@bangle.dev/tooltip@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/tooltip/-/tooltip-0.24.0-alpha.10.tgz#1fb7b91ccae1898839234e04583a6761df09bb2c"
-  integrity sha512-f+7HUzSPHAIWTADxBFw3xORDdA8RHLnq++1KcFgmHMgcqdKq5VbfGc1FOOypCmud148BxpZfvytDP/k4hHlsag==
+"@bangle.dev/tooltip@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/tooltip/-/tooltip-0.25.0.tgz#81ed53d5051cc7d53a58e85d2e525723e42c0fcd"
+  integrity sha512-iGQa+4qbtZDWAIqZHB8mtBT+MOzIjOG9OcFXqr+9xKI4vmH+wfClSDmdOj7abzgZc16MrY5E9xOEoU9TCtuB9g==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
-    "@bangle.dev/utils" "0.24.0-alpha.10"
+    "@bangle.dev/utils" "0.25.0"
     "@popperjs/core" "^2.5.4"
 
-"@bangle.dev/trailing-node@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/trailing-node/-/trailing-node-0.24.0-alpha.10.tgz#15d96dfdcf9d5c7a4b6e38106595e946a720ee64"
-  integrity sha512-jVcWq4ftD3XWSJMgXSrx6e5s/wCxrH9bC+PpiNS5Nwz5F0Pw9fzxov8WfVL69+sZonIxFgtNisjZlh/As0gcSw==
+"@bangle.dev/trailing-node@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/trailing-node/-/trailing-node-0.25.0.tgz#9a37e3a2b085605e69620eb555db4efbee875ea7"
+  integrity sha512-Oa6B+cwgk7eB1CnNGEf+DB85rDNmRObLVn7aPWNxsf/UH9dO3+7DwQNge0JL9OABglLg2n8i2tFGbnSRaQeiwA==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
+    "@bangle.dev/utils" "0.25.0"
 
-"@bangle.dev/utils@0.24.0-alpha.10", "@bangle.dev/utils@^0.24.0-alpha.10":
-  version "0.24.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/@bangle.dev/utils/-/utils-0.24.0-alpha.10.tgz#78af2368f03873abb0a8ea8abb986adbd7c79d3c"
-  integrity sha512-mF3oAHgIY4cljflTrpsV6ovmR+yIpETkdehI7yYqhNurZVUNnpzxBkyWyREHN39RKxk9uIBHbO5CdgN/GIwy+A==
+"@bangle.dev/utils@0.25.0", "@bangle.dev/utils@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@bangle.dev/utils/-/utils-0.25.0.tgz#b8bb09d2cdd0bfc7589a91cb5db4b2c44b791e04"
+  integrity sha512-S59inBhdWpo5239XfEXsPiLfYjkGdqgozQ7B7ZJAj1o68EwDk/z/0QUi4yKQF0VeVMeCbS/SznELKq6zmMSBVQ==
   dependencies:
-    "@bangle.dev/pm" "0.6.0"
-    prosemirror-model "^1.14.2"
-    prosemirror-state "^1.3.4"
+    prosemirror-model "^1.0.0"
+    prosemirror-state "^1.0.1"
     prosemirror-utils "1.0.0-0"
 
 "@docsearch/css@3.0.0-alpha.37":
@@ -2005,7 +1999,7 @@
   resolved "https://registry.yarnpkg.com/@types/parse5/-/parse5-5.0.3.tgz#e7b5aebbac150f8b5fdd4a46e7f0bd8e65e19109"
   integrity sha512-kUNnecmtkunAoQ3CnjmMkzNU/gtxG8guhi+Fk2U/kOpIKjIMKnXGp4IJCgQJrXSgMsWYimYG4TGjz/UzbGEBTw==
 
-"@types/prosemirror-commands@*", "@types/prosemirror-commands@^1.0.4":
+"@types/prosemirror-commands@*", "@types/prosemirror-commands@1.x":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@types/prosemirror-commands/-/prosemirror-commands-1.0.4.tgz#d08551415127d93ae62e7239d30db0b5e7208e22"
   integrity sha512-utDNYB3EXLjAfYIcRWJe6pn3kcQ5kG4RijbT/0Y/TFOm6yhvYS/D9eJVnijdg9LDjykapcezchxGRqFD5LcyaQ==
@@ -2014,14 +2008,14 @@
     "@types/prosemirror-state" "*"
     "@types/prosemirror-view" "*"
 
-"@types/prosemirror-dropcursor@^1.0.2":
+"@types/prosemirror-dropcursor@1.x":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@types/prosemirror-dropcursor/-/prosemirror-dropcursor-1.0.2.tgz#476b90a661f32d6d6a21599f53fcd71e36c65a1f"
   integrity sha512-5Ez7yIAvHQgn5YJkuafEh0w4sHV7pksCX9LTPBFRjCuznamcKsnYCez4mR0PwIWq/WuPDvHkR+wqKb4l0t9/aQ==
   dependencies:
     "@types/prosemirror-state" "*"
 
-"@types/prosemirror-gapcursor@^1.0.4":
+"@types/prosemirror-gapcursor@1.x":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@types/prosemirror-gapcursor/-/prosemirror-gapcursor-1.0.4.tgz#7df7d373edb33ea8da12084bfd462cf84cd69761"
   integrity sha512-9xKjFIG5947dzerFvkLWp6F53JwrUYoYwh3SgcTFEp8SbSfNNrez/PFYVZKPnoqPoaK5WtTdQTaMwpCV9rXQIg==
@@ -2029,7 +2023,7 @@
     "@types/prosemirror-model" "*"
     "@types/prosemirror-state" "*"
 
-"@types/prosemirror-history@^1.0.3":
+"@types/prosemirror-history@1.x":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@types/prosemirror-history/-/prosemirror-history-1.0.3.tgz#f1110efbe758129b5475e466ff077f0a8d9b964f"
   integrity sha512-5TloMDRavgLjOAKXp1Li8u0xcsspzbT1Cm9F2pwHOkgvQOz1jWQb2VIXO7RVNsFjLBZdIXlyfSLivro3DuMWXg==
@@ -2037,7 +2031,7 @@
     "@types/prosemirror-model" "*"
     "@types/prosemirror-state" "*"
 
-"@types/prosemirror-inputrules@^1.0.4":
+"@types/prosemirror-inputrules@1.x":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@types/prosemirror-inputrules/-/prosemirror-inputrules-1.0.4.tgz#4cb75054d954aa0f6f42099be05eb6c0e6958bae"
   integrity sha512-lJIMpOjO47SYozQybUkpV6QmfuQt7GZKHtVrvS+mR5UekA8NMC5HRIVMyaIauJLWhKU6oaNjpVaXdw41kh165g==
@@ -2045,7 +2039,7 @@
     "@types/prosemirror-model" "*"
     "@types/prosemirror-state" "*"
 
-"@types/prosemirror-keymap@^1.0.4":
+"@types/prosemirror-keymap@1.x":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@types/prosemirror-keymap/-/prosemirror-keymap-1.0.4.tgz#f73c79810e8d0e0a20d153d84f998f02e5afbc0c"
   integrity sha512-ycevwkqUh+jEQtPwqO7sWGcm+Sybmhu8MpBsM8DlO3+YTKnXbKA6SDz/+q14q1wK3UA8lHJyfR+v+GPxfUSemg==
@@ -2055,14 +2049,14 @@
     "@types/prosemirror-state" "*"
     "@types/prosemirror-view" "*"
 
-"@types/prosemirror-model@*", "@types/prosemirror-model@^1.13.1":
+"@types/prosemirror-model@*", "@types/prosemirror-model@1.x":
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/@types/prosemirror-model/-/prosemirror-model-1.13.1.tgz#53df04ee174a7e1dc12747005b1b4c02565adcc4"
   integrity sha512-tA1AlI+YR2t3Ve5eeQVJnQm4yV4wVlNfeogHusD1X3OEqqMYTuPssThgIMR4PxPHtvV871Ix8a20bUiJvULDgw==
   dependencies:
     "@types/orderedmap" "*"
 
-"@types/prosemirror-schema-list@^1.0.3":
+"@types/prosemirror-schema-list@1.x":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@types/prosemirror-schema-list/-/prosemirror-schema-list-1.0.3.tgz#bdf1893a7915fbdc5c49b3cac9368e96213d70de"
   integrity sha512-uWybOf+M2Ea7rlbs0yLsS4YJYNGXYtn4N+w8HCw3Vvfl6wBAROzlMt0gV/D/VW/7J/LlAjwMezuGe8xi24HzXA==
@@ -2071,7 +2065,7 @@
     "@types/prosemirror-model" "*"
     "@types/prosemirror-state" "*"
 
-"@types/prosemirror-state@*", "@types/prosemirror-state@^1.2.7":
+"@types/prosemirror-state@*", "@types/prosemirror-state@1.x":
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/@types/prosemirror-state/-/prosemirror-state-1.2.7.tgz#cd55062e4043a31e3426f47668f1d7038b5d8dfb"
   integrity sha512-clJf5uw3/XQnBJtl2RqYXoLMGBySnLYl43xtDvFfQZKkLnnYcM1SDU8dcz7lWjl2Dm+H98RpLOl44pp7DYT+wA==
@@ -2080,14 +2074,14 @@
     "@types/prosemirror-transform" "*"
     "@types/prosemirror-view" "*"
 
-"@types/prosemirror-transform@*", "@types/prosemirror-transform@^1.1.4":
+"@types/prosemirror-transform@*", "@types/prosemirror-transform@1.x":
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/@types/prosemirror-transform/-/prosemirror-transform-1.1.4.tgz#c3565e81b2ef3ce3254e6927d6f63eb8d7bb20d0"
   integrity sha512-HP1PauvkqSgDquZut8HaLOTUDQ6jja/LAy4OA7tTS1XG7wqRnX3gLUyEj0mD6vFd4y8BPkNddNdOh/BeGHlUjg==
   dependencies:
     "@types/prosemirror-model" "*"
 
-"@types/prosemirror-view@*", "@types/prosemirror-view@^1.17.2":
+"@types/prosemirror-view@*", "@types/prosemirror-view@1.x":
   version "1.17.2"
   resolved "https://registry.yarnpkg.com/@types/prosemirror-view/-/prosemirror-view-1.17.2.tgz#3aff71a0802bdfc310404db8a37ced2db69fd74f"
   integrity sha512-1yUTQZ3yx2YvJTHZdY/rmvSiJ8tJLhUmlNgbFdkFaFcKC6LTBntg5lQvOZ53Aytadab+M/xz7/TzGX8iYB/7gw==
@@ -7061,7 +7055,7 @@ prosemirror-gapcursor@^1.1.5:
     prosemirror-state "^1.0.0"
     prosemirror-view "^1.0.0"
 
-prosemirror-history@^1.1.3:
+prosemirror-history@^1.1.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/prosemirror-history/-/prosemirror-history-1.1.3.tgz#4f76a1e71db4ef7cdf0e13dec6d8da2aeaecd489"
   integrity sha512-zGDotijea+vnfnyyUGyiy1wfOQhf0B/b6zYcCouBV8yo6JmrE9X23M5q7Nf/nATywEZbgRLG70R4DmfSTC+gfg==
@@ -7070,7 +7064,7 @@ prosemirror-history@^1.1.3:
     prosemirror-transform "^1.0.0"
     rope-sequence "^1.3.0"
 
-prosemirror-inputrules@^1.1.3:
+prosemirror-inputrules@^1.1.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/prosemirror-inputrules/-/prosemirror-inputrules-1.1.3.tgz#93f9199ca02473259c30d7e352e4c14022d54638"
   integrity sha512-ZaHCLyBtvbyIHv0f5p6boQTIJjlD6o2NPZiEaZWT2DA+j591zS29QQEMT4lBqwcLW3qRSf7ZvoKNbf05YrsStw==
@@ -7094,7 +7088,7 @@ prosemirror-markdown@^1.5.1:
     markdown-it "^10.0.0"
     prosemirror-model "^1.0.0"
 
-prosemirror-model@^1.0.0, prosemirror-model@^1.1.0, prosemirror-model@^1.14.2, prosemirror-model@^1.8.1:
+prosemirror-model@^1.0.0, prosemirror-model@^1.1.0, prosemirror-model@^1.8.1:
   version "1.14.2"
   resolved "https://registry.yarnpkg.com/prosemirror-model/-/prosemirror-model-1.14.2.tgz#4e8c39cfff4e097631af4495e125d9a8a9773116"
   integrity sha512-TwkACyEiSi8FJiRhg2ffbzmQRy5DR+aTwAr7trNQNZL24HJR8ouxy4qCkG99PnWK0xZ0AjSMtPXSU6hnxAiP7Q==
@@ -7109,7 +7103,7 @@ prosemirror-schema-list@^1.1.5:
     prosemirror-model "^1.0.0"
     prosemirror-transform "^1.0.0"
 
-prosemirror-state@^1.0.0, prosemirror-state@^1.2.2, prosemirror-state@^1.3.1, prosemirror-state@^1.3.4:
+prosemirror-state@^1.0.0, prosemirror-state@^1.0.1, prosemirror-state@^1.2.2, prosemirror-state@^1.3.1:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/prosemirror-state/-/prosemirror-state-1.3.4.tgz#4c6b52628216e753fc901c6d2bfd84ce109e8952"
   integrity sha512-Xkkrpd1y/TQ6HKzN3agsQIGRcLckUMA9u3j207L04mt8ToRgpGeyhbVv0HI7omDORIBHjR29b7AwlATFFf2GLA==
@@ -7128,7 +7122,7 @@ prosemirror-tables@^1.1.1:
     prosemirror-transform "^1.2.1"
     prosemirror-view "^1.13.3"
 
-prosemirror-transform@^1.0.0, prosemirror-transform@^1.1.0, prosemirror-transform@^1.2.1, prosemirror-transform@^1.3.2:
+prosemirror-transform@^1.0.0, prosemirror-transform@^1.1.0, prosemirror-transform@^1.2.1:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/prosemirror-transform/-/prosemirror-transform-1.3.2.tgz#5620ebe7379e6fae4f34ecc881886cb22ce96579"
   integrity sha512-/G6d/u9Mf6Bv3H1XR8VxhpjmUO75LYmnvj+s3ZfZpakU1hnQbsvCEybml1B3f2IWUAAQRFkbO1PnsbFhLZsYsw==
@@ -7140,7 +7134,7 @@ prosemirror-utils@1.0.0-0:
   resolved "https://registry.yarnpkg.com/prosemirror-utils/-/prosemirror-utils-1.0.0-0.tgz#7dfd112abf69001508a76200f9c8660fda7fa85f"
   integrity sha512-11hTMG4Qwqlux6Vwp/4m16mLDg6IwWb0/odsWXGtWvvRJo61SfG0RGYlA8H72vExmbnWpiXa7PNenZ6t12Rkqw==
 
-prosemirror-view@^1.0.0, prosemirror-view@^1.1.0, prosemirror-view@^1.13.3, prosemirror-view@^1.18.10:
+prosemirror-view@^1.0.0, prosemirror-view@^1.1.0, prosemirror-view@^1.10.0, prosemirror-view@^1.13.3:
   version "1.18.10"
   resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.18.10.tgz#7ee25be72409f8de21ba2d08c640e4dd7a3ddef7"
   integrity sha512-DR3lexbN3D36umBNo7DaYheEQB0MdC8Hk2Lhz2YXIC7nEPjC2VG03Zy/YcYusxTtAY08+YB6OKH3yDWJDRObtg==
