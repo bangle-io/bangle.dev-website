@@ -1,11 +1,10 @@
 import {
   BangleEditor,
   BangleEditorState,
-  corePlugins,
-  coreSpec,
   Plugin,
   SpecRegistry,
 } from '@bangle.dev/core';
+import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
 import '@bangle.dev/core/style.css';
 import { toHTMLString } from '@bangle.dev/utils';
 
@@ -23,9 +22,9 @@ export default function Editor(domNode) {
   }
 
   const state = new BangleEditorState({
-    specRegistry: new SpecRegistry(coreSpec()),
+    specRegistry: new SpecRegistry(defaultSpecs()),
     plugins: () => [
-      ...corePlugins(),
+      ...defaultPlugins(),
       new Plugin({
         view: () => ({
           update: (view, prevState) => {

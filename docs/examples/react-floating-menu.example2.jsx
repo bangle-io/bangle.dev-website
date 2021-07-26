@@ -3,8 +3,10 @@ import '@bangle.dev/tooltip/style.css';
 import '@bangle.dev/react-menu/style.css';
 import React from 'react';
 import { BangleEditor, useEditorState } from '@bangle.dev/react';
-import { PluginKey, components } from '@bangle.dev/core';
-import { corePlugins, coreSpec } from '@bangle.dev/core';
+import { PluginKey } from '@bangle.dev/core';
+import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
+import { heading } from '@bangle.dev/base-components';
+
 import {
   floatingMenu,
   FloatingMenu,
@@ -21,15 +23,15 @@ const menuKey = new PluginKey('menuKey');
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: coreSpec(),
+    specs: defaultSpecs(),
     plugins: () => [
-      ...corePlugins(),
+      ...defaultPlugins(),
       floatingMenu.plugins({
         key: menuKey,
         calculateType: (state, prevType) => {
           // Use the 'headingSubMenu' type whenever
           // the selection is inside a heading.
-          if (components.heading.commands.queryIsHeadingActive()(state)) {
+          if (heading.commands.queryIsHeadingActive()(state)) {
             return 'headingSubMenu';
           }
 

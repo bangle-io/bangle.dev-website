@@ -11,6 +11,6 @@ Docs coming soon
 
 ```
 # peer deps
-npm install @bangle.dev/collab-server @bangle.dev/core
+npm install @bangle.dev/collab-server @bangle.dev/core @bangle.dev/pm
 npm install @bangle.dev/collab-client
 ```

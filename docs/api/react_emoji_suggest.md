@@ -12,6 +12,8 @@ This package provides you suggestions for picking your favourite emojis :sunglas
 ### Installation
 
 ```
+# peer deps
+npm install @bangle.dev/core @bangle.dev/emoji @bangle.dev/react @bangle.dev/tooltip
 npm install @bangle.dev/react-emoji-suggest
 ```
 

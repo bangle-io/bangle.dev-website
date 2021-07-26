@@ -1,4 +1,5 @@
-import { corePlugins, coreSpec, PluginKey } from '@bangle.dev/core';
+import { defaultSpecs, defaultPlugins } from '@bangle.dev/all-base-components';
+import { PluginKey } from '@bangle.dev/core';
 import '@bangle.dev/core/style.css';
 import { emoji } from '@bangle.dev/emoji';
 import '@bangle.dev/emoji/style.css';
@@ -57,7 +58,7 @@ const getEmojiByAlias = (emojiAlias) => {
 export default function Example() {
   const editorState = useEditorState({
     specs: [
-      ...coreSpec(),
+      ...defaultSpecs(),
       emoji.spec({
         getEmoji: (emojiAlias) =>
           getEmojiByAlias(emojiAlias) || ['question', '❓'],
@@ -65,7 +66,7 @@ export default function Example() {
       emojiSuggest.spec({ markName: 'emojiSuggest' }),
     ],
     plugins: () => [
-      ...corePlugins(),
+      ...defaultPlugins(),
       emoji.plugins(),
       emojiSuggest.plugins({
         key: emojiSuggestKey,

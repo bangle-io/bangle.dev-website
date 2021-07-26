@@ -8,9 +8,8 @@ Bangle uses the concept of [Commands](/docs/api/core#command) which is borrowed 
 In the example below we try out a [heading](/docs/api/core#heading-component) command.
 
 ```js
-import { components } from '@bangle.dev/core';
+import { heading } from '@bangle.dev/base-components';
 
-const { heading } = components;
 // Create a command for toggling heading of level 3
 const command = heading.commands.toggleHeading(3);
 

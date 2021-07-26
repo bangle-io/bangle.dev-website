@@ -1,21 +1,20 @@
 import {
   BangleEditor,
   BangleEditorState,
-  corePlugins,
-  coreSpec,
   SpecRegistry,
 } from '@bangle.dev/core';
+import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
 import '@bangle.dev/core/style.css';
 import * as markdown from '@bangle.dev/markdown';
 
-const specRegistry = new SpecRegistry(coreSpec());
+const specRegistry = new SpecRegistry(defaultSpecs());
 const parser = markdown.markdownParser(specRegistry);
 const serializer = markdown.markdownSerializer(specRegistry);
 
 export default function Editor(domNode) {
   const state = new BangleEditorState({
     specRegistry,
-    plugins: () => corePlugins(),
+    plugins: () => defaultPlugins(),
     initialValue: parser.parse(getMarkdown()),
   });
 

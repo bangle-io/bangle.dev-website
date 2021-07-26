@@ -4,7 +4,8 @@ import '@bangle.dev/react-menu/style.css';
 import React, { useState } from 'react';
 import { BangleEditor, useEditorState } from '@bangle.dev/react';
 import { PluginKey } from '@bangle.dev/core';
-import { corePlugins, coreSpec } from '@bangle.dev/core';
+import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
+
 import {
   floatingMenu,
   StaticMenu,
@@ -27,9 +28,9 @@ const menuKey = new PluginKey('menuKey');
 export default function Example() {
   const [editor, setEditor] = useState();
   const editorState = useEditorState({
-    specs: coreSpec(),
+    specs: defaultSpecs(),
     plugins: () => [
-      corePlugins(),
+      defaultPlugins(),
       floatingMenu.plugins({
         key: menuKey,
       }),

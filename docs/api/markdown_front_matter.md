@@ -13,6 +13,6 @@ Docs coming soon
 
 ```
 # peer deps
-npm install @bangle.dev/core
+npm install @bangle.dev/core @bangle.dev/pm
 npm install @bangle.dev/markdown-front-matter
 ```

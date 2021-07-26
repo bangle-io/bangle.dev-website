@@ -1,18 +1,17 @@
 import {
   BangleEditor,
   BangleEditorState,
-  corePlugins,
-  coreSpec,
   SpecRegistry,
-  heading,
-} from "@bangle.dev/core";
-import "@bangle.dev/core/style.css";
-import { Plugin, Selection, Decoration, DecorationSet } from "@bangle.dev/pm";
+} from '@bangle.dev/core';
+import '@bangle.dev/core/style.css';
+import { Plugin, Selection, Decoration, DecorationSet } from '@bangle.dev/pm';
+import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
+import { heading } from '@bangle.dev/base-components';
 
 export default function Editor(domNode) {
   const state = new BangleEditorState({
-    specRegistry: new SpecRegistry(coreSpec()),
-    plugins: () => [...corePlugins(), collapsePlugin],
+    specRegistry: new SpecRegistry(defaultSpecs()),
+    plugins: () => [...defaultPlugins(), collapsePlugin],
     initialValue: `<div>
     <h2>Philosophy</h2>
     <p>Philosophy is the study of underlying things. This means philosophy tries to understand the reasons or basis for things. It also tries to understand how things should be. "Philosophia" is the Ancient Greek word for the "love of wisdom". A person who does philosophy is called a philosopher. A philosopher is a kind of thinker or researcher. A "philosophy" can also mean a group of ideas by philosophers, or by a philosopher. Philosophy is a way of thinking about the world, the universe, and society. In the past, sciences were part of philosophy as well.</p>
@@ -64,7 +63,7 @@ const collapsePlugin = new Plugin({
 
 function buildDeco(state) {
   const collapsedHeadingSet = new Set(
-    heading.listCollapsedHeading(state).map((r) => r.node)
+    heading.listCollapsedHeading(state).map((r) => r.node),
   );
 
   const headings = heading
@@ -82,12 +81,12 @@ function buildDeco(state) {
           createCollapseDOM(
             view,
             collapsedHeadingSet.has(match.node),
-            match.pos
+            match.pos,
           ),
         // render deco before cursor
-        { side: -1 }
-      )
-    )
+        { side: -1 },
+      ),
+    ),
   );
 }
 
@@ -95,15 +94,15 @@ function buildDeco(state) {
 // - will be placed at the right position by Prosemirror
 // - will respond to click event and trigger the toggleHeadingCollapse command
 function createCollapseDOM(view, isCollapsed, pos) {
-  const child = document.createElement("span");
-  child.addEventListener("click", function (e) {
+  const child = document.createElement('span');
+  child.addEventListener('click', function (e) {
     const tr = view.state.tr;
     view.dispatch(tr.setSelection(Selection.near(tr.doc.resolve(pos))));
     heading.toggleHeadingCollapse()(view.state, view.dispatch, view);
   });
 
-  child.style.userSelect = "none";
-  child.style.cursor = "pointer";
-  child.innerText = isCollapsed ? "▶️" : "▼";
+  child.style.userSelect = 'none';
+  child.style.cursor = 'pointer';
+  child.innerText = isCollapsed ? '▶️' : '▼';
   return child;
 }

@@ -9,7 +9,7 @@ id: 'emoji'
 
 ```
 # peer deps
-npm install @bangle.dev/core
+npm install @bangle.dev/core @bangle.dev/pm
 npm install @bangle.dev/emoji
 ```
 

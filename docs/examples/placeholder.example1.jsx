@@ -1,15 +1,14 @@
 import {
   BangleEditor,
   BangleEditorState,
-  corePlugins,
-  coreSpec,
   Plugin,
   PluginKey,
-  setSelectionAtEnd,
 } from '@bangle.dev/core';
 import '@bangle.dev/core/style.css';
-import { selectionTooltip } from '@bangle.dev/tooltip';
 import '@bangle.dev/tooltip/style.css';
+import { selectionTooltip } from '@bangle.dev/tooltip';
+import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
+import { setTextSelection } from '@bangle.dev/utils';
 
 const placeholderKey = new PluginKey('placeholder');
 
@@ -48,8 +47,8 @@ function placeholder() {
 
 export default function Editor(domNode) {
   const state = new BangleEditorState({
-    specs: [coreSpec()],
-    plugins: () => [corePlugins(), placeholder()],
+    specs: [defaultSpecs()],
+    plugins: () => [defaultPlugins(), placeholder()],
     initialValue: `<p>Let us show the word count on every new line!</p>
     <p></p>`,
   });
@@ -60,3 +59,17 @@ export default function Editor(domNode) {
   setSelectionAtEnd(view.state.doc)(view.state, view.dispatch);
   return editor;
 }
+
+const setSelectionAtEnd = (node) => {
+  return (state, dispatch, _view) => {
+    let pos = node.nodeSize - 1;
+    if (node.type.name === 'doc') {
+      pos = node.content.size - 1;
+    }
+    const tr = setTextSelection(pos)(state.tr);
+    if (dispatch) {
+      dispatch(tr);
+    }
+    return true;
+  };
+};

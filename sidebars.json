@@ -49,6 +49,7 @@
       "type": "category",
       "label": "API",
       "items": [
+        "api/base_components",
         "api/core",
         "api/emoji",
         "api/react",

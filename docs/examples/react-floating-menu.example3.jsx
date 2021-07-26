@@ -7,8 +7,7 @@ import {
   useEditorState,
   useEditorViewContext,
 } from '@bangle.dev/react';
-import { PluginKey, components } from '@bangle.dev/core';
-import { corePlugins, coreSpec } from '@bangle.dev/core';
+import { PluginKey } from '@bangle.dev/core';
 import {
   floatingMenu,
   FloatingMenu,
@@ -23,14 +22,15 @@ import {
   ChevronDown,
   ChevronUp,
 } from '@bangle.dev/react-menu';
+import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
 
 const menuKey = new PluginKey('menuKey');
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: coreSpec(),
+    specs: defaultSpecs(),
     plugins: () => [
-      ...corePlugins(),
+      ...defaultPlugins(),
       floatingMenu.plugins({
         key: menuKey,
         tooltipRenderOpts: {
@@ -95,13 +95,13 @@ function NodeTypeButton({ isDropdownVisible, updateDropdown }) {
     [updateDropdown],
   );
   let name = 'paragraph';
-  if (components.orderedList.queryIsOrderedListActive()(view.state)) {
+  if (orderedList.queryIsOrderedListActive()(view.state)) {
     name = 'Ordered List';
-  } else if (components.bulletList.queryIsBulletListActive()(view.state)) {
+  } else if (bulletList.queryIsBulletListActive()(view.state)) {
     name = 'Bullet List';
-  } else if (components.bulletList.queryIsTodoListActive()(view.state)) {
+  } else if (bulletList.queryIsTodoListActive()(view.state)) {
     name = 'Todo List';
-  } else if (components.heading.queryIsHeadingActive(1)(view.state)) {
+  } else if (heading.queryIsHeadingActive(1)(view.state)) {
     name = 'Heading 1';
   }
   return (

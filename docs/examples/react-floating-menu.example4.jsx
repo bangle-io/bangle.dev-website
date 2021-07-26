@@ -1,11 +1,6 @@
 import '@bangle.dev/react-menu/style.css';
 import '@bangle.dev/tooltip/style.css';
-import {
-  corePlugins,
-  coreSpec,
-  PluginKey,
-  setSelectionAtEnd,
-} from '@bangle.dev/core';
+import { PluginKey } from '@bangle.dev/core';
 import '@bangle.dev/core/style.css';
 import { BangleEditor, useEditorState } from '@bangle.dev/react';
 import {
@@ -19,6 +14,8 @@ import {
   ParagraphButton,
   TodoListButton,
 } from '@bangle.dev/react-menu';
+import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
+import { setTextSelection } from '@bangle.dev/utils';
 
 import React from 'react';
 
@@ -26,9 +23,9 @@ const menuKey = new PluginKey('menuKey');
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: coreSpec(),
+    specs: defaultSpecs(),
     plugins: () => [
-      ...corePlugins(),
+      ...defaultPlugins(),
       floatingMenu.plugins({
         key: menuKey,
         tooltipRenderOpts: {
@@ -88,3 +85,17 @@ export default function Example() {
     </BangleEditor>
   );
 }
+
+const setSelectionAtEnd = (node) => {
+  return (state, dispatch, _view) => {
+    let pos = node.nodeSize - 1;
+    if (node.type.name === 'doc') {
+      pos = node.content.size - 1;
+    }
+    const tr = setTextSelection(pos)(state.tr);
+    if (dispatch) {
+      dispatch(tr);
+    }
+    return true;
+  };
+};

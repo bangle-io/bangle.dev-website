@@ -11,7 +11,7 @@ This package provides you with tools to help build flexible yet powerful menus u
 
 ```
 # peer deps
-npm install @bangle.dev/core @bangle.dev/react @bangle.dev/tooltip
+npm install @bangle.dev/core @bangle.dev/pm @bangle.dev/react @bangle.dev/tooltip
 npm install @bangle.dev/react-menu
 ```
 
