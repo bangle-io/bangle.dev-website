@@ -1,36 +1,52 @@
+import {
+  bulletList,
+  heading,
+  listItem,
+  orderedList,
+  paragraph,
+} from '@bangle.dev/base-components';
+import { PluginKey } from '@bangle.dev/core';
 import '@bangle.dev/core/style.css';
-import '@bangle.dev/tooltip/style.css';
-import '@bangle.dev/react-menu/style.css';
-import React, { useCallback } from 'react';
 import {
   BangleEditor,
   useEditorState,
   useEditorViewContext,
 } from '@bangle.dev/react';
-import { PluginKey, components } from '@bangle.dev/core';
-import { corePlugins, coreSpec } from '@bangle.dev/core';
 import {
-  floatingMenu,
-  FloatingMenu,
-  Menu,
-  HeadingButton,
   BulletListButton,
-  MenuDropdown,
-  MenuButton,
-  TodoListButton,
-  OrderedListButton,
-  ParagraphButton,
   ChevronDown,
   ChevronUp,
+  floatingMenu,
+  FloatingMenu,
+  HeadingButton,
+  Menu,
+  MenuButton,
+  MenuDropdown,
+  OrderedListButton,
+  ParagraphButton,
+  TodoListButton,
 } from '@bangle.dev/react-menu';
+import '@bangle.dev/react-menu/style.css';
+import '@bangle.dev/tooltip/style.css';
+import React, { useCallback } from 'react';
 
 const menuKey = new PluginKey('menuKey');
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: coreSpec(),
+    specs: [
+      orderedList.spec(),
+      bulletList.spec(),
+      listItem.spec(),
+      paragraph.spec(),
+      heading.spec(),
+    ],
     plugins: () => [
-      ...corePlugins(),
+      orderedList.plugins(),
+      bulletList.plugins(),
+      listItem.plugins(),
+      paragraph.plugins(),
+      heading.plugins(),
       floatingMenu.plugins({
         key: menuKey,
         tooltipRenderOpts: {
@@ -95,13 +111,13 @@ function NodeTypeButton({ isDropdownVisible, updateDropdown }) {
     [updateDropdown],
   );
   let name = 'paragraph';
-  if (components.orderedList.queryIsOrderedListActive()(view.state)) {
+  if (orderedList.queryIsOrderedListActive()(view.state)) {
     name = 'Ordered List';
-  } else if (components.bulletList.queryIsBulletListActive()(view.state)) {
+  } else if (bulletList.queryIsBulletListActive()(view.state)) {
     name = 'Bullet List';
-  } else if (components.bulletList.queryIsTodoListActive()(view.state)) {
+  } else if (bulletList.queryIsTodoListActive()(view.state)) {
     name = 'Todo List';
-  } else if (components.heading.queryIsHeadingActive(1)(view.state)) {
+  } else if (heading.queryIsHeadingActive(1)(view.state)) {
     name = 'Heading 1';
   }
   return (

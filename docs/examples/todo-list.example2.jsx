@@ -1,8 +1,7 @@
 import '@bangle.dev/core/style.css';
 
-import { BangleEditor, BangleEditorState, components } from '@bangle.dev/core';
-
-const { listItem, bulletList, orderedList } = components;
+import { BangleEditor, BangleEditorState } from '@bangle.dev/core';
+import { listItem, bulletList, orderedList } from '@bangle.dev/base-components';
 
 export default function Editor(domNode) {
   const state = new BangleEditorState({

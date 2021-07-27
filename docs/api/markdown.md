@@ -11,6 +11,6 @@ Docs coming soon
 
 ```
 # peer deps
-npm install @bangle.dev/core @bangle.dev/table
+npm install @bangle.dev/core @bangle.dev/pm
 npm install @bangle.dev/markdown
 ```

@@ -3,33 +3,31 @@ import '@bangle.dev/tooltip/style.css';
 import '@bangle.dev/react-menu/style.css';
 import React from 'react';
 import { BangleEditor, useEditorState } from '@bangle.dev/react';
-import { PluginKey, components } from '@bangle.dev/core';
-import { corePlugins, coreSpec } from '@bangle.dev/core';
+import { PluginKey } from '@bangle.dev/core';
+
 import {
   floatingMenu,
   FloatingMenu,
   Menu,
   MenuGroup,
-  BoldButton,
   HeadingButton,
-  BulletListButton,
-  ItalicButton,
-  FloatingLinkButton,
+  ParagraphButton,
 } from '@bangle.dev/react-menu';
-
+import { heading, paragraph } from '@bangle.dev/base-components';
 const menuKey = new PluginKey('menuKey');
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: coreSpec(),
+    specs: [paragraph.spec(), heading.spec()],
     plugins: () => [
-      ...corePlugins(),
+      paragraph.plugins(),
+      heading.plugins(),
       floatingMenu.plugins({
         key: menuKey,
         calculateType: (state, prevType) => {
           // Use the 'headingSubMenu' type whenever
           // the selection is inside a heading.
-          if (components.heading.commands.queryIsHeadingActive()(state)) {
+          if (heading.commands.queryIsHeadingActive()(state)) {
             return 'headingSubMenu';
           }
 
@@ -60,7 +58,7 @@ export default function Example() {
           if (type === 'headingSubMenu') {
             return (
               <Menu>
-                <span>This is a heading!</span>
+                <ParagraphButton />
               </Menu>
             );
           }
@@ -69,14 +67,8 @@ export default function Example() {
             return (
               <Menu>
                 <MenuGroup>
-                  <BoldButton />
-                  <ItalicButton />
-                  <FloatingLinkButton menuKey={menuKey} />
-                </MenuGroup>
-                <MenuGroup>
                   <HeadingButton level={1} />
                   <HeadingButton level={2} />
-                  <BulletListButton />
                 </MenuGroup>
               </Menu>
             );

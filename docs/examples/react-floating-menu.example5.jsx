@@ -3,19 +3,16 @@ import '@bangle.dev/tooltip/style.css';
 import '@bangle.dev/react-menu/style.css';
 import React from 'react';
 import { BangleEditor, useEditorState } from '@bangle.dev/react';
-import { PluginKey, link } from '@bangle.dev/core';
-import { corePlugins, coreSpec } from '@bangle.dev/core';
+import { PluginKey } from '@bangle.dev/core';
 import {
   floatingMenu,
   FloatingMenu,
   Menu,
   MenuGroup,
-  BoldButton,
   HeadingButton,
-  ItalicButton,
   MenuButton,
 } from '@bangle.dev/react-menu';
-
+import { heading, paragraph } from '@bangle.dev/base-components';
 const menuKey = new PluginKey('menuKey');
 
 function MyCustomButton() {
@@ -24,6 +21,7 @@ function MyCustomButton() {
       hintPos="top"
       hint="Hola"
       onMouseDown={(e) => {
+        // dispatch a PM command here
         e.preventDefault();
       }}
       isActive={true}
@@ -46,15 +44,13 @@ function MyCustomButton() {
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: coreSpec(),
+    specs: [heading.spec(), paragraph.spec()],
     plugins: () => [
-      corePlugins(),
+      heading.plugins(),
+      paragraph.plugins(),
       floatingMenu.plugins({
         key: menuKey,
         calculateType: (state, prevType) => {
-          if (link.queryIsLinkActive()(state)) {
-            return 'linkSubMenu';
-          }
           if (state.selection.empty) {
             return null;
           }
@@ -76,8 +72,6 @@ export default function Example() {
             return (
               <Menu>
                 <MenuGroup>
-                  <BoldButton />
-                  <ItalicButton />
                   <MyCustomButton />
                 </MenuGroup>
                 <MenuGroup>

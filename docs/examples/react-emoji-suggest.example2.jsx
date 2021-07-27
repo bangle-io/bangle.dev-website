@@ -1,4 +1,4 @@
-import { corePlugins, coreSpec, PluginKey } from '@bangle.dev/core';
+import { PluginKey } from '@bangle.dev/core';
 import '@bangle.dev/core/style.css';
 import { emoji } from '@bangle.dev/emoji';
 import '@bangle.dev/emoji/style.css';
@@ -8,6 +8,13 @@ import '@bangle.dev/react-emoji-suggest/style.css';
 import '@bangle.dev/tooltip/style.css';
 import gemojiData from 'emoji-lookup-data/data/gemoji.json';
 import React from 'react';
+import {
+  heading,
+  listItem,
+  bulletList,
+  orderedList,
+  code,
+} from '@bangle.dev/base-components';
 const emojiSuggestKey = new PluginKey('emojiSuggestKey');
 
 const emojiData = Object.values(
@@ -33,7 +40,11 @@ const getEmojiByAlias = (emojiAlias) => {
 export default function Example() {
   const editorState = useEditorState({
     specs: [
-      ...coreSpec(),
+      heading.spec(),
+      listItem.spec(),
+      bulletList.spec(),
+      orderedList.spec(),
+      code.spec(),
       emoji.spec({
         getEmoji: (emojiAlias) =>
           getEmojiByAlias(emojiAlias) || ['question', '❓'],
@@ -41,7 +52,11 @@ export default function Example() {
       emojiSuggest.spec({ markName: 'emojiSuggest' }),
     ],
     plugins: () => [
-      ...corePlugins(),
+      heading.plugins(),
+      listItem.plugins(),
+      bulletList.plugins(),
+      orderedList.plugins(),
+      code.plugins(),
       emoji.plugins(),
       emojiSuggest.plugins({
         key: emojiSuggestKey,

@@ -4,10 +4,9 @@ import {
   BangleEditor,
   BangleEditorState,
   SpecRegistry,
-  components,
 } from '@bangle.dev/core';
+import { heading, bold } from '@bangle.dev/base-components';
 
-const { heading, bold } = components;
 export default function createEditor(
   domNode = document.getElementById('#editor'),
 ) {

@@ -10,6 +10,8 @@ id: 'text_formatting'
 Provides more text formatting components on top of the ones provides by `@bangle.dev/core`.
 
 ```
+# peer deps
+npm install @bangle.dev/core @bangle.dev/pm
 npm install @bangle.dev/text-formatting
 ```
 
