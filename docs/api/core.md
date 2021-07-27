@@ -44,7 +44,7 @@ An object with the following fields:
 
 - **schema**: [Prosemirror.NodeSpec](https://prosemirror.net/docs/ref/#model.NodeSpec) | [Prosemirror.MarkSpec](https://prosemirror.net/docs/ref/#model.MarkSpec)
 
-- **markdown**: ?{toMarkdown: fn(), parseMarkdown: object}\
+- **markdown**: ?{toMarkdown: fn(), parseMarkdown: object}\  
 
 - **options**: ?object  
   Use this to save data in this spec. You can use this field to save some data options to make it available to anyone having access to specRegistry.
@@ -55,7 +55,7 @@ An object with the following fields:
 
 > [Prosemirror.Plugin](https://prosemirror.net/docs/ref/#state.PluginSpec) | [Plugins](#plugins)\[\] | (fn({ schema, specRegistry, metadata }) -> [Plugins](#plugins)) | undefined
 
-This is designed in a way to provide flexibility and extensibility when grouping multiple plugins under a [Component](/docs/api/core/#component). Please checkout this [example](/docs/examples/exporting-data#persisting-to-local-storage) on how to create a small plugin or read the source code of some of the base components.
+This is designed in a way to provide flexibility and extensibility when grouping multiple plugins under a [Component](/docs/api/core/#component). Please checkout this [example](/docs/examples/exporting-data#persisting-to-local-storage) on how to create a small plugin or read the source code of some of the core components.
 
 ### Plugin
 
@@ -119,7 +119,7 @@ Initializes and mounts the editor in your application. Create an editor instance
 
 - **element:** : [dom.Node](https://developer.mozilla.org/en-US/docs/Web/API/Node)
 
-- **options:** Object  
+- **options:** Object   
   Has the following named parameters
 
   - **state:** [BangleEditorState](/docs/api/core/#bangleeditorstate)  
@@ -128,7 +128,7 @@ Initializes and mounts the editor in your application. Create an editor instance
   - **focusOnInit:** ?boolean=true  
     Focus the editor after initialization.
 
-  - **pmViewOpts**: ?[Prosemirror.DirectEditorProps](https://prosemirror.net/docs/ref/#view.DirectEditorProps)  
+  - **pmViewOpts**: ?[Prosemirror.DirectEditorProps](https://prosemirror.net/docs/ref/#view.DirectEditorProps)   
     An object containing PM's editor props.
 
 The class exposes the following fields/methods:
@@ -186,7 +186,7 @@ Create an editor state instance with following params:
   - **pluginMetadata**: ?Object  
     An object that will be then passed to any plugin (see the `options.plugins` ) as a `metadata` named parameter. Use this to relay any information about the editor to a plugin.
 
-  - **initialValue:** string | htmlString | undefined  
+  - **initialValue:** string | htmlString | undefined   
     The initial content of the editor.
 
   - **editorProps:** [Prosemirror.EditorProps](https://prosemirror.net/docs/ref/#view.EditorProps)
@@ -235,14 +235,14 @@ In the example below, we are loading a bunch of specs & plugins.
 import {
   SpecRegistry,
   BangleEditorState,
-  BangleEditor,
+  BangleEditor
 } from '@bangle.dev/core';
 import {
   bulletList,
   listItem,
   orderedList,
   bold,
-  link,
+  link
 } from '@bangle.dev/base-components';
 
 const specRegistry = new SpecRegistry([

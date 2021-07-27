@@ -1,7 +1,12 @@
 import '@bangle.dev/core/style.css';
 import { NodeView, domSerializationHelpers } from '@bangle.dev/core';
-import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
-
+import {
+  code,
+  heading,
+  listItem,
+  bulletList,
+  orderedList,
+} from '@bangle.dev/base-components';
 import { safeInsert } from '@bangle.dev/utils';
 import { BangleEditor, useEditorState } from '@bangle.dev/react';
 import { keymap } from '@bangle.dev/pm';
@@ -43,8 +48,22 @@ const speech = {
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: [...defaultSpecs(), speech.spec()],
-    plugins: () => [...defaultPlugins(), speech.plugins()],
+    specs: [
+      code.spec(),
+      heading.spec(),
+      listItem.spec(),
+      bulletList.spec(),
+      orderedList.spec(),
+      speech.spec(),
+    ],
+    plugins: () => [
+      code.plugins(),
+      heading.plugins(),
+      listItem.plugins(),
+      bulletList.plugins(),
+      orderedList.plugins(),
+      speech.plugins(),
+    ],
     initialValue: {
       type: 'doc',
       content: [

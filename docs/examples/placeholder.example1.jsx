@@ -7,8 +7,7 @@ import {
 import '@bangle.dev/core/style.css';
 import '@bangle.dev/tooltip/style.css';
 import { selectionTooltip } from '@bangle.dev/tooltip';
-import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
-import { setTextSelection } from '@bangle.dev/utils';
+import { setTextSelection, foo } from '@bangle.dev/utils';
 
 const placeholderKey = new PluginKey('placeholder');
 
@@ -47,8 +46,8 @@ function placeholder() {
 
 export default function Editor(domNode) {
   const state = new BangleEditorState({
-    specs: [defaultSpecs()],
-    plugins: () => [defaultPlugins(), placeholder()],
+    specs: [],
+    plugins: () => [placeholder()],
     initialValue: `<p>Let us show the word count on every new line!</p>
     <p></p>`,
   });

@@ -27,7 +27,7 @@ Bangle allows exporting the editor state in different ways:
 You can try some of the following:
 
 - Use markdown shortcuts like `# `, `- `, `1. `, `> `, `[ ] ` to trigger new blocks.
-- Use keyboard shortcuts like `Command-b` or `Command-i` to enable marks, see [core components](/docs/api/core#components) docs for more keyboard shortcuts.
+- Use keyboard shortcuts like `Command-b` or `Command-i` to enable marks, see [base components](/docs/api/base_components) docs for more keyboard shortcuts.
 - Try pasting rich text from some other place.
 
 <VanillaCodeExample
@@ -46,24 +46,27 @@ You can try some of the following:
       };
     }, [setState]);
     return (
-      <Tabs
-        defaultValue="html"
-        values={[
-          { label: 'HTML', value: 'html' },
-          { label: 'JSON', value: 'json' },
-        ]}
-      >
-        <TabItem value="html">
-          <CodeBlock className={'language-html'}>
-            {formatHTMLString(data.htmlString)}
-          </CodeBlock>
-        </TabItem>
-        <TabItem value="json">
-          <CodeBlock className={'language-json'}>
-            {JSON.stringify(data.json, null, 2)}
-          </CodeBlock>
-        </TabItem>
-      </Tabs>
+      <>
+        <p>Here is the output:</p>
+        <Tabs
+          defaultValue="html"
+          values={[
+            { label: 'HTML', value: 'html' },
+            { label: 'JSON', value: 'json' },
+          ]}
+        >
+          <TabItem value="html">
+            <CodeBlock className={'language-html'}>
+              {formatHTMLString(data.htmlString)}
+            </CodeBlock>
+          </TabItem>
+          <TabItem value="json">
+            <CodeBlock className={'language-json'}>
+              {JSON.stringify(data.json, null, 2)}
+            </CodeBlock>
+          </TabItem>
+        </Tabs>
+      </>
     );
   }}
 />

@@ -9,7 +9,7 @@ Every Bangle components that support keybindings will
 - export `defaultKeys` object to get access to all the default keys.
 
 In the example below we look at how to customize a keybindings for the
-[bold](/docs/api/core#bold-component) component.
+[bold](/docs/api/base_components#bold-component) component.
 
 ```js
 import { bold } from '@bangle.dev/base-components';

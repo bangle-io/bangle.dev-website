@@ -1,7 +1,14 @@
-import '@bangle.dev/react-menu/style.css';
-import '@bangle.dev/tooltip/style.css';
-import { PluginKey } from '@bangle.dev/core';
 import '@bangle.dev/core/style.css';
+import '@bangle.dev/tooltip/style.css';
+import '@bangle.dev/react-menu/style.css';
+import {
+  bulletList,
+  heading,
+  listItem,
+  orderedList,
+  paragraph,
+} from '@bangle.dev/base-components';
+import { PluginKey } from '@bangle.dev/core';
 import { BangleEditor, useEditorState } from '@bangle.dev/react';
 import {
   BlockquoteButton,
@@ -14,18 +21,26 @@ import {
   ParagraphButton,
   TodoListButton,
 } from '@bangle.dev/react-menu';
-import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
 import { setTextSelection } from '@bangle.dev/utils';
-
 import React from 'react';
 
 const menuKey = new PluginKey('menuKey');
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: defaultSpecs(),
+    specs: [
+      orderedList.spec(),
+      bulletList.spec(),
+      listItem.spec(),
+      paragraph.spec(),
+      heading.spec(),
+    ],
     plugins: () => [
-      ...defaultPlugins(),
+      orderedList.plugins(),
+      bulletList.plugins(),
+      listItem.plugins(),
+      paragraph.plugins(),
+      heading.plugins(),
       floatingMenu.plugins({
         key: menuKey,
         tooltipRenderOpts: {

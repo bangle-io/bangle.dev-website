@@ -1,12 +1,15 @@
-import {
-  BangleEditor,
-  BangleEditorState,
-  Plugin,
-  SpecRegistry,
-} from '@bangle.dev/core';
+import { BangleEditor, BangleEditorState, Plugin } from '@bangle.dev/core';
 import '@bangle.dev/core/style.css';
-import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
-
+import {
+  bold,
+  italic,
+  link,
+  bulletList,
+  heading,
+  listItem,
+  orderedList,
+  paragraph,
+} from '@bangle.dev/base-components';
 function getItemFromStorage() {
   try {
     return JSON.parse(localStorage.getItem('exporting-data.example2'));
@@ -17,9 +20,25 @@ function getItemFromStorage() {
 
 export default function Editor(domNode) {
   const state = new BangleEditorState({
-    specRegistry: new SpecRegistry(defaultSpecs()),
+    specs: [
+      bold.spec(),
+      italic.spec(),
+      link.spec(),
+      orderedList.spec(),
+      bulletList.spec(),
+      listItem.spec(),
+      paragraph.spec(),
+      heading.spec(),
+    ],
     plugins: () => [
-      ...defaultPlugins(),
+      bold.plugins(),
+      italic.plugins(),
+      link.plugins(),
+      orderedList.plugins(),
+      bulletList.plugins(),
+      listItem.plugins(),
+      paragraph.plugins(),
+      heading.plugins(),
       new Plugin({
         view: () => ({
           update: (view, prevState) => {

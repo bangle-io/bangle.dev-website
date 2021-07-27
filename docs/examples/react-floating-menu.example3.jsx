@@ -1,36 +1,52 @@
+import {
+  bulletList,
+  heading,
+  listItem,
+  orderedList,
+  paragraph,
+} from '@bangle.dev/base-components';
+import { PluginKey } from '@bangle.dev/core';
 import '@bangle.dev/core/style.css';
-import '@bangle.dev/tooltip/style.css';
-import '@bangle.dev/react-menu/style.css';
-import React, { useCallback } from 'react';
 import {
   BangleEditor,
   useEditorState,
   useEditorViewContext,
 } from '@bangle.dev/react';
-import { PluginKey } from '@bangle.dev/core';
 import {
-  floatingMenu,
-  FloatingMenu,
-  Menu,
-  HeadingButton,
   BulletListButton,
-  MenuDropdown,
-  MenuButton,
-  TodoListButton,
-  OrderedListButton,
-  ParagraphButton,
   ChevronDown,
   ChevronUp,
+  floatingMenu,
+  FloatingMenu,
+  HeadingButton,
+  Menu,
+  MenuButton,
+  MenuDropdown,
+  OrderedListButton,
+  ParagraphButton,
+  TodoListButton,
 } from '@bangle.dev/react-menu';
-import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
+import '@bangle.dev/react-menu/style.css';
+import '@bangle.dev/tooltip/style.css';
+import React, { useCallback } from 'react';
 
 const menuKey = new PluginKey('menuKey');
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: defaultSpecs(),
+    specs: [
+      orderedList.spec(),
+      bulletList.spec(),
+      listItem.spec(),
+      paragraph.spec(),
+      heading.spec(),
+    ],
     plugins: () => [
-      ...defaultPlugins(),
+      orderedList.plugins(),
+      bulletList.plugins(),
+      listItem.plugins(),
+      paragraph.plugins(),
+      heading.plugins(),
       floatingMenu.plugins({
         key: menuKey,
         tooltipRenderOpts: {

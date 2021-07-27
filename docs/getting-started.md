@@ -3,17 +3,23 @@ title: Getting started
 sidebar_label: Getting Started
 ---
 
-To get started with bangle.dev you need to install the core module:
+To get started with bangle.dev you need to install the core module and base components:
 
+```bash
+npm install @bangle.dev/core @bangle.dev/base-components
 ```
-npm install @bangle.dev/core
+
+and install the peers:
+
+```bash
+npm install @bangle.dev/pm
 ```
 
 ## With React
 
 Bangle at its heart is framework agnostic, but it comes with first party support for React. To get started, run the follow command:
 
-```
+```bash
 npm install @bangle.dev/react
 ```
 

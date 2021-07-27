@@ -1,20 +1,70 @@
+import '@bangle.dev/core/style.css';
 import {
   BangleEditor,
   BangleEditorState,
   SpecRegistry,
 } from '@bangle.dev/core';
-import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
-import '@bangle.dev/core/style.css';
-import * as markdown from '@bangle.dev/markdown';
-
-const specRegistry = new SpecRegistry(defaultSpecs());
-const parser = markdown.markdownParser(specRegistry);
-const serializer = markdown.markdownSerializer(specRegistry);
+import { markdownParser, markdownSerializer } from '@bangle.dev/markdown';
+import {
+  blockquote,
+  bold,
+  bulletList,
+  code,
+  codeBlock,
+  hardBreak,
+  heading,
+  horizontalRule,
+  image,
+  italic,
+  link,
+  listItem,
+  orderedList,
+  paragraph,
+  strike,
+  underline,
+} from '@bangle.dev/base-components';
+const specRegistry = new SpecRegistry([
+  blockquote.spec(),
+  bold.spec(),
+  bulletList.spec(),
+  code.spec(),
+  codeBlock.spec(),
+  hardBreak.spec(),
+  heading.spec(),
+  horizontalRule.spec(),
+  image.spec(),
+  italic.spec(),
+  link.spec(),
+  listItem.spec(),
+  orderedList.spec(),
+  paragraph.spec(),
+  strike.spec(),
+  underline.spec(),
+]);
+const parser = markdownParser(specRegistry);
+const serializer = markdownSerializer(specRegistry);
 
 export default function Editor(domNode) {
   const state = new BangleEditorState({
     specRegistry,
-    plugins: () => defaultPlugins(),
+    plugins: () => [
+      blockquote.plugins(),
+      bold.plugins(),
+      bulletList.plugins(),
+      code.plugins(),
+      codeBlock.plugins(),
+      hardBreak.plugins(),
+      heading.plugins(),
+      horizontalRule.plugins(),
+      image.plugins(),
+      italic.plugins(),
+      link.plugins(),
+      listItem.plugins(),
+      orderedList.plugins(),
+      paragraph.plugins(),
+      strike.plugins(),
+      underline.plugins(),
+    ],
     initialValue: parser.parse(getMarkdown()),
   });
 

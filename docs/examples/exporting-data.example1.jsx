@@ -1,13 +1,16 @@
-import {
-  BangleEditor,
-  BangleEditorState,
-  Plugin,
-  SpecRegistry,
-} from '@bangle.dev/core';
-import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
+import { BangleEditor, BangleEditorState, Plugin } from '@bangle.dev/core';
 import '@bangle.dev/core/style.css';
 import { toHTMLString } from '@bangle.dev/utils';
-
+import {
+  bold,
+  italic,
+  link,
+  bulletList,
+  heading,
+  listItem,
+  orderedList,
+  paragraph,
+} from '@bangle.dev/base-components';
 export default function Editor(domNode) {
   function onEditorDocChange(state) {
     // window.showData is just a quick hacky way
@@ -22,9 +25,25 @@ export default function Editor(domNode) {
   }
 
   const state = new BangleEditorState({
-    specRegistry: new SpecRegistry(defaultSpecs()),
+    specs: [
+      bold.spec(),
+      italic.spec(),
+      link.spec(),
+      orderedList.spec(),
+      bulletList.spec(),
+      listItem.spec(),
+      paragraph.spec(),
+      heading.spec(),
+    ],
     plugins: () => [
-      ...defaultPlugins(),
+      bold.plugins(),
+      italic.plugins(),
+      link.plugins(),
+      orderedList.plugins(),
+      bulletList.plugins(),
+      listItem.plugins(),
+      paragraph.plugins(),
+      heading.plugins(),
       new Plugin({
         view: () => ({
           update: (view, prevState) => {

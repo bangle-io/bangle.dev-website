@@ -9,14 +9,10 @@ import {
   FloatingMenu,
   Menu,
   MenuGroup,
-  BoldButton,
   HeadingButton,
-  ItalicButton,
   MenuButton,
 } from '@bangle.dev/react-menu';
-import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
-import { link } from '@bangle.dev/base-components';
-
+import { heading, paragraph } from '@bangle.dev/base-components';
 const menuKey = new PluginKey('menuKey');
 
 function MyCustomButton() {
@@ -25,6 +21,7 @@ function MyCustomButton() {
       hintPos="top"
       hint="Hola"
       onMouseDown={(e) => {
+        // dispatch a PM command here
         e.preventDefault();
       }}
       isActive={true}
@@ -47,15 +44,13 @@ function MyCustomButton() {
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: defaultSpecs(),
+    specs: [heading.spec(), paragraph.spec()],
     plugins: () => [
-      defaultPlugins(),
+      heading.plugins(),
+      paragraph.plugins(),
       floatingMenu.plugins({
         key: menuKey,
         calculateType: (state, prevType) => {
-          if (link.queryIsLinkActive()(state)) {
-            return 'linkSubMenu';
-          }
           if (state.selection.empty) {
             return null;
           }
@@ -77,8 +72,6 @@ export default function Example() {
             return (
               <Menu>
                 <MenuGroup>
-                  <BoldButton />
-                  <ItalicButton />
                   <MyCustomButton />
                 </MenuGroup>
                 <MenuGroup>

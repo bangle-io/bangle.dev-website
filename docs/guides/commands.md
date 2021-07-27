@@ -5,7 +5,7 @@ sidebar_label: Commands and Interactivty
 
 Bangle uses the concept of [Commands](/docs/api/core#command) which is borrowed from [Prosemirror](https://prosemirror.net/docs/guide/#commands) to allow for making controlled changes to your editor.
 
-In the example below we try out a [heading](/docs/api/core#heading-component) command.
+In the example below we try out a [heading](/docs/api/base_components#heading-component) command.
 
 ```js
 import { heading } from '@bangle.dev/base-components';

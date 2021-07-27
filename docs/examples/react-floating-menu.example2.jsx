@@ -4,28 +4,24 @@ import '@bangle.dev/react-menu/style.css';
 import React from 'react';
 import { BangleEditor, useEditorState } from '@bangle.dev/react';
 import { PluginKey } from '@bangle.dev/core';
-import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
-import { heading } from '@bangle.dev/base-components';
 
 import {
   floatingMenu,
   FloatingMenu,
   Menu,
   MenuGroup,
-  BoldButton,
   HeadingButton,
-  BulletListButton,
-  ItalicButton,
-  FloatingLinkButton,
+  ParagraphButton,
 } from '@bangle.dev/react-menu';
-
+import { heading, paragraph } from '@bangle.dev/base-components';
 const menuKey = new PluginKey('menuKey');
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: defaultSpecs(),
+    specs: [paragraph.spec(), heading.spec()],
     plugins: () => [
-      ...defaultPlugins(),
+      paragraph.plugins(),
+      heading.plugins(),
       floatingMenu.plugins({
         key: menuKey,
         calculateType: (state, prevType) => {
@@ -62,7 +58,7 @@ export default function Example() {
           if (type === 'headingSubMenu') {
             return (
               <Menu>
-                <span>This is a heading!</span>
+                <ParagraphButton />
               </Menu>
             );
           }
@@ -71,14 +67,8 @@ export default function Example() {
             return (
               <Menu>
                 <MenuGroup>
-                  <BoldButton />
-                  <ItalicButton />
-                  <FloatingLinkButton menuKey={menuKey} />
-                </MenuGroup>
-                <MenuGroup>
                   <HeadingButton level={1} />
                   <HeadingButton level={2} />
-                  <BulletListButton />
                 </MenuGroup>
               </Menu>
             );

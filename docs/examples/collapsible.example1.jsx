@@ -1,17 +1,35 @@
+import '@bangle.dev/core/style.css';
 import {
   BangleEditor,
   BangleEditorState,
   SpecRegistry,
 } from '@bangle.dev/core';
-import '@bangle.dev/core/style.css';
 import { Plugin, Selection, Decoration, DecorationSet } from '@bangle.dev/pm';
-import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
-import { heading } from '@bangle.dev/base-components';
+import {
+  heading,
+  listItem,
+  bulletList,
+  orderedList,
+  paragraph,
+} from '@bangle.dev/base-components';
 
 export default function Editor(domNode) {
   const state = new BangleEditorState({
-    specRegistry: new SpecRegistry(defaultSpecs()),
-    plugins: () => [...defaultPlugins(), collapsePlugin],
+    specRegistry: new SpecRegistry([
+      paragraph.spec(),
+      heading.spec(),
+      listItem.spec(),
+      bulletList.spec(),
+      orderedList.spec(),
+    ]),
+    plugins: () => [
+      paragraph.plugins(),
+      heading.plugins(),
+      listItem.plugins(),
+      bulletList.plugins(),
+      orderedList.plugins(),
+      collapsePlugin,
+    ],
     initialValue: `<div>
     <h2>Philosophy</h2>
     <p>Philosophy is the study of underlying things. This means philosophy tries to understand the reasons or basis for things. It also tries to understand how things should be. "Philosophia" is the Ancient Greek word for the "love of wisdom". A person who does philosophy is called a philosopher. A philosopher is a kind of thinker or researcher. A "philosophy" can also mean a group of ideas by philosophers, or by a philosopher. Philosophy is a way of thinking about the world, the universe, and society. In the past, sciences were part of philosophy as well.</p>

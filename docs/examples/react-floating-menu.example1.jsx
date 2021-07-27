@@ -5,15 +5,39 @@ import { floatingMenu, FloatingMenu } from '@bangle.dev/react-menu';
 import '@bangle.dev/react-menu/style.css';
 import '@bangle.dev/tooltip/style.css';
 import React from 'react';
-import { defaultPlugins, defaultSpecs } from '@bangle.dev/all-base-components';
-
+import {
+  bold,
+  italic,
+  link,
+  bulletList,
+  heading,
+  listItem,
+  orderedList,
+  paragraph,
+} from '@bangle.dev/base-components';
 const menuKey = new PluginKey('menuKey');
 
 export default function Example() {
   const editorState = useEditorState({
-    specs: defaultSpecs(),
+    specs: [
+      bold.spec(),
+      italic.spec(),
+      link.spec(),
+      orderedList.spec(),
+      bulletList.spec(),
+      listItem.spec(),
+      paragraph.spec(),
+      heading.spec(),
+    ],
     plugins: () => [
-      ...defaultPlugins(),
+      bold.plugins(),
+      italic.plugins(),
+      link.plugins(),
+      orderedList.plugins(),
+      bulletList.plugins(),
+      listItem.plugins(),
+      paragraph.plugins(),
+      heading.plugins(),
       floatingMenu.plugins({
         key: menuKey,
       }),
